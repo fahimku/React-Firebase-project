@@ -1,5 +1,6 @@
 {
   "name": "rapid-vite",
+  "homepage" : "https://fahimku.github.io/React-Firebase-project",
   "private": true,
   "version": "0.0.0",
   "type": "module",
