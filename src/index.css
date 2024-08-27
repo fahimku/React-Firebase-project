@@ -1,0 +1,79 @@
+
+/* Define light mode variables */
+:root {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --primary-color: #1890ff;
+  }
+  
+  /* Define dark mode variables */
+  .dark-mode {
+    --background-color: #181818;
+    --text-color: #ffffff;
+    --primary-color: #1d1d1d;
+  }
+  
+  /* Apply variables throughout your app */
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  .ant-menu {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  .ant-menu-item {
+    &:hover {
+      background-color: var(--primary-color);
+    }
+  }
+  
+  /* Additional component styles here */
+  /* Dark mode styles */
+.dark-mode .dark-mode-container {
+  background-color: #181818; /* Dark background for the container */
+  color: white; /* White text color */
+}
+
+.dark-mode .dark-mode-container h2 {
+  color: white; /* White color for heading */
+}
+
+.dark-mode .ant-upload-list-picture-card .ant-upload-list-item-thumbnail, 
+.dark-mode .ant-upload-select-picture-card, .dark-mode .ant-upload {
+  background-color: #fff; /* Dark background for image box */
+  border-color: #fff; /* Dark border */
+}
+
+.dark-mode .ant-btn-primary {
+  background-color: #555; /* Dark background for buttons */
+  border-color: #555;
+  color: white; /* White text color */
+}
+
+.dark-mode .top-bar {
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.top-bar {
+  border-bottom: 1px solid rgba(5, 5, 5, 0.06);
+  height: 54px;
+  margin-bottom: 20px;
+}
+.dark-mode-container {
+  float: right;
+  width: 78%;
+  padding: 0 15px;
+}
+.left-main-menu{
+  float: left;
+  width: 22%;
+}
+.dark-mode .left-main-menu {
+  border-right: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+.main-nav .ant-tabs-nav {
+  margin: 0px;
+}
