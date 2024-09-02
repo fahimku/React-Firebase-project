@@ -77,3 +77,36 @@
 .main-nav .ant-tabs-nav {
   margin: 0px;
 }
+
+.toast-error {
+  background-color: #e74c3c;
+}
+.toast-error .ant-notification-notice-message {
+  color: #fff !important;
+  position: relative !important;
+}
+.toast-error .ant-notification-notice-description {
+  color: #fff !important;
+}
+.toast-error .anticon.ant-notification-notice-icon-error {
+  color: #fff !important;
+}
+.toast-error .ant-notification-notice-close {
+  color: #fff !important;
+}
+.toast-success {
+  background-color: #07bc0c;
+}
+.toast-success .ant-notification-notice-message {
+  color: #fff !important;
+  position: relative;
+}
+.toast-success .ant-notification-notice-description {
+  color: #fff !important;
+}
+.toast-success .anticon.ant-notification-notice-icon-success {
+  color: #fff !important;
+}
+.toast-success .ant-notification-notice-close {
+  color: #fff !important;
+}

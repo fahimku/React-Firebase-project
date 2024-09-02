@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Button, notification } from 'antd';
+import { Alert, Button, notification } from 'antd';
 import { messaging } from "../config/firebase";
 import { getToken, onMessage } from "firebase/messaging";
 
 export function NotificationScreen() {
   const [token, setToken] = useState("");
+  const [permission, setPermission] = useState(true);
 
   async function requestPermission() {
     const permission = await Notification.requestPermission();
@@ -17,12 +18,11 @@ export function NotificationScreen() {
       setToken(token);
       // Send this token to the server (db)
     } else if (permission === "denied") {
-      alert("You denied the notification permission");
+      setPermission(false);
+      console.log(permission,"permission");
     }
   }
-
-  console.log(token, "token");
-
+  console.log(token,"token");
   useEffect(() => {
     // Request user for notification permission
     requestPermission();
@@ -41,22 +41,44 @@ export function NotificationScreen() {
 
   const displayAntDesignNotification = (title, description) => {
     if (Notification.permission === "granted") {
-      new Notification(title);
+      new Notification(title, {
+        body: description,
+        badge: "https://firebase.google.com/static/images/brand-guidelines/logo-vertical.png",
+        icon: "https://firebase.google.com/static/images/brand-guidelines/logo-vertical.png",
+      });
     }
     notification.open({
       message: title,
       description: description,
-      onClick: () => {
-        console.log('Notification Clicked!');
-      },
+      className: 'toast-success',
+      // onClick: () => {
+      //   console.log('Notification Clicked!');
+      // },
     });
   };
 
   const showNotification = () => {
-    displayAntDesignNotification('Custom Notification', 'This is a custom notification sent from the frontend!');
+    if(permission) {
+      displayAntDesignNotification('Firebase Notification', 'Firebase notification sent from the frontend!');
+    }
+    else {
+      notification.error({
+        message: "Permission Error",
+        description: "You denied the notification permission",
+        className: 'toast-error',
+        duration: 0,
+      });
+    }
   };
 
   return (
+    <>
+    {!permission &&
+    <div className='container mt-4'>
+      <Alert message="You denied the notification permission" type="error" />
+    </div>
+    }
+
     <div style={{ textAlign: 'center', marginTop: '50px' }}>
       <h1>Notification</h1>
       <Button
@@ -68,5 +90,7 @@ export function NotificationScreen() {
         Press Me!
       </Button>
     </div>
+    </>
+    
   );
 }

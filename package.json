@@ -1,6 +1,6 @@
 {
   "name": "rapid-vite",
-  "homepage" : "https://fahimku.github.io/React-Firebase-project",
+  "homepage": "https://fahimku.github.io/React-Firebase-project",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -13,6 +13,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@mui/icons-material": "^6.0.0",
+    "@mui/material": "^6.0.0",
     "@reduxjs/toolkit": "^2.2.7",
     "antd": "^5.20.0",
     "axios": "^1.7.3",
