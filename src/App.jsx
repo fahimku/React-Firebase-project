@@ -8,7 +8,7 @@ import { Calculator } from './pages/Calculator';
 
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
-    .register('../public/firebase-messaging-sw.js')
+    .register('https://fahimku.github.io/React-Firebase-project/firebase-messaging-sw.js')
     .then((registration) => {
       console.log('Service Worker registered with scope:', registration.scope);
     })
